@@ -1,0 +1,289 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #555a60;
+  color: white;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+}
+
+.tit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  color: #f2c080;
+}
+
+/*heading section*/
+
+#hero {
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+#hero .hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+
+#hero h1 {
+  display: block;
+  padding-left: 400px;
+  text-align: center;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: whitesmoke;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+#hero h1:nth-child(1) {
+  animation-delay: 1s;
+}
+
+#hero h1:nth-child(2) {
+  animation-delay: 2s;
+}
+
+#hero h1:nth-child(3) {
+  animation: text_reveal_name 0.5s ease forwards;
+  animation-delay: 3s;
+}
+
+#hero h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: wheat;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+
+#hero h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+
+#hero h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+
+/*End*/
+
+.head h1 {
+  color: white;
+  position: relative;
+}
+
+p {
+  color: #f2c080;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+.landing-text .p {
+  color: #f2c080;
+  font-size: 1.3rem;
+}
+
+@keyframes jump {
+  0% {
+    color: white;
+  }
+  25% {
+    color: green;
+  }
+  50% {
+    color: orange;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.3rem;
+  font-size: 2rem;
+  border-style: inherit;
+  border-radius: 10px;
+  background: white;
+}
+
+form button {
+  color: black;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: black;
+  color: white;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+  font-weight: bold;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-weight: bold;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo-input {
+  border: 20px;
+  border-radius: 10px;
+}
+
+.todo li {
+  flex: 1;
+  font-weight: bold;
+}
+
+.trash-btn,
+.complete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: green;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 10px;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: black;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background: black;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.select:hover::after {
+  background: white;
+  color: black;
+}
+
+.complete-btn:hover {
+  background: white;
+  color: green;
+}
+
+/*Responsive Site*/
+
+@media only screen and (max-width: 720px) {
+  #hero h1 {
+    padding-top: 25px;
+    padding-left: 100px;
+  }
+}
